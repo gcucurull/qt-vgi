@@ -1,0 +1,1260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CGEnvWindow</class>
+ <widget class="QMainWindow" name="CGEnvWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>774</width>
+    <height>507</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CGEnvWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="GLWidget" name="contextGL" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>774</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen_3DS_File"/>
+    <addaction name="actionOpen_OBJ_File"/>
+    <addaction name="actionOpen_Fractal"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_Fractal_As"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuBars">
+    <property name="title">
+     <string>Bars</string>
+    </property>
+    <addaction name="actionToolBar"/>
+    <addaction name="actionStatusBar"/>
+    <addaction name="actionFull_Screen"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionMobil"/>
+    <addaction name="actionZoom"/>
+    <addaction name="separator"/>
+    <addaction name="actionPolars_Eix_Z"/>
+    <addaction name="actionPolars_Eix_Y"/>
+    <addaction name="actionPolars_Eix_X"/>
+    <addaction name="separator"/>
+    <addaction name="actionPan"/>
+    <addaction name="actionOrigen_Pan"/>
+    <addaction name="separator"/>
+    <addaction name="actionNavega"/>
+    <addaction name="actionOrigen_Navega"/>
+    <addaction name="separator"/>
+    <addaction name="actionEixos"/>
+   </widget>
+   <widget class="QMenu" name="menuProjection">
+    <property name="title">
+     <string>Projection</string>
+    </property>
+    <addaction name="actionPerspective"/>
+   </widget>
+   <widget class="QMenu" name="menuObject">
+    <property name="title">
+     <string>Object</string>
+    </property>
+    <addaction name="actionCube"/>
+    <addaction name="actionSphere"/>
+    <addaction name="actionTeapot"/>
+    <addaction name="actionTruck"/>
+   </widget>
+   <widget class="QMenu" name="menuTransform">
+    <property name="title">
+     <string>Transform</string>
+    </property>
+    <addaction name="actionTraslation"/>
+    <addaction name="actionOrigen_Tras"/>
+    <addaction name="separator"/>
+    <addaction name="actionRotation"/>
+    <addaction name="actionOrigen_Rot"/>
+    <addaction name="separator"/>
+    <addaction name="actionScale"/>
+    <addaction name="actionOrigen_Scale"/>
+    <addaction name="separator"/>
+    <addaction name="actionMobil_Eix_X"/>
+    <addaction name="actionMobil_Eix_Y"/>
+    <addaction name="actionMobil_Eix_Z"/>
+   </widget>
+   <widget class="QMenu" name="menuHidden">
+    <property name="title">
+     <string>Hidden</string>
+    </property>
+    <addaction name="actionBack_Face_Culling"/>
+    <addaction name="actionZ_Buffer"/>
+    <addaction name="separator"/>
+    <addaction name="actionBack_Line"/>
+   </widget>
+   <widget class="QMenu" name="menuLighting">
+    <property name="title">
+     <string>Lighting</string>
+    </property>
+    <widget class="QMenu" name="menuTexture_Function_2">
+     <property name="title">
+      <string>Texture Function</string>
+     </property>
+     <addaction name="actionImage_File"/>
+    </widget>
+    <widget class="QMenu" name="menuMapping">
+     <property name="title">
+      <string>Mapping</string>
+     </property>
+     <addaction name="actionDecal"/>
+     <addaction name="actionModulate"/>
+    </widget>
+    <addaction name="actionLight_Fixed"/>
+    <addaction name="separator"/>
+    <addaction name="actionWireframe"/>
+    <addaction name="actionFlat"/>
+    <addaction name="actionGouraud"/>
+    <addaction name="separator"/>
+    <addaction name="actionTexture"/>
+    <addaction name="menuTexture_Function_2"/>
+    <addaction name="menuMapping"/>
+   </widget>
+   <widget class="QMenu" name="menuHola">
+    <property name="title">
+     <string>Hola</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuBars"/>
+   <addaction name="menuView"/>
+   <addaction name="menuProjection"/>
+   <addaction name="menuObject"/>
+   <addaction name="menuTransform"/>
+   <addaction name="menuHidden"/>
+   <addaction name="menuLighting"/>
+   <addaction name="menuHola"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionOpen_3DS_File">
+   <property name="text">
+    <string>Open 3DS File</string>
+   </property>
+  </action>
+  <action name="actionOpen_OBJ_File">
+   <property name="text">
+    <string>Open OBJ File</string>
+   </property>
+  </action>
+  <action name="actionOpen_Fractal">
+   <property name="text">
+    <string>Open Fractal</string>
+   </property>
+  </action>
+  <action name="actionSave_Fractal_As">
+   <property name="text">
+    <string>Save Fractal As...</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionToolBar">
+   <property name="text">
+    <string>ToolBar</string>
+   </property>
+  </action>
+  <action name="actionStatusBar">
+   <property name="text">
+    <string>StatusBar</string>
+   </property>
+  </action>
+  <action name="actionFull_Screen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Full Screen?</string>
+   </property>
+  </action>
+  <action name="actionMobil">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Mobil?</string>
+   </property>
+  </action>
+  <action name="actionZoom">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Zoom?</string>
+   </property>
+  </action>
+  <action name="actionPolars_Eix_Z">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Polars Eix Z?</string>
+   </property>
+  </action>
+  <action name="actionPolars_Eix_Y">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Polars Eix Y?</string>
+   </property>
+  </action>
+  <action name="actionPolars_Eix_X">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Polars Eix X?</string>
+   </property>
+  </action>
+  <action name="actionPan">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Pan?</string>
+   </property>
+  </action>
+  <action name="actionOrigen_Pan">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Origen Pan</string>
+   </property>
+  </action>
+  <action name="actionNavega">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Navega?</string>
+   </property>
+  </action>
+  <action name="actionOrigen_Navega">
+   <property name="text">
+    <string>Origen Navega</string>
+   </property>
+  </action>
+  <action name="actionOrthographic">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Orthographic</string>
+   </property>
+  </action>
+  <action name="actionPerspective">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Perspective</string>
+   </property>
+  </action>
+  <action name="actionCube">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Cube</string>
+   </property>
+  </action>
+  <action name="actionSphere">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Sphere</string>
+   </property>
+  </action>
+  <action name="actionTeapot">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Teapot</string>
+   </property>
+  </action>
+  <action name="actionTruck">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Truck</string>
+   </property>
+  </action>
+  <action name="actionTraslation">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Traslation?</string>
+   </property>
+  </action>
+  <action name="actionOrigen_Tras">
+   <property name="text">
+    <string>Origen Tras</string>
+   </property>
+  </action>
+  <action name="actionRotation">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Rotation?</string>
+   </property>
+  </action>
+  <action name="actionOrigen_Rot">
+   <property name="text">
+    <string>Origen Rot</string>
+   </property>
+  </action>
+  <action name="actionScale">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Scale?</string>
+   </property>
+  </action>
+  <action name="actionOrigen_Scale">
+   <property name="text">
+    <string>Origen Scale</string>
+   </property>
+  </action>
+  <action name="actionMobil_Eix_X">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Mobil Eix X?</string>
+   </property>
+  </action>
+  <action name="actionMobil_Eix_Y">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Mobil Eix Y?</string>
+   </property>
+  </action>
+  <action name="actionMobil_Eix_Z">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Mobil Eix Z?</string>
+   </property>
+  </action>
+  <action name="actionBack_Face_Culling">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Back Face Culling?</string>
+   </property>
+  </action>
+  <action name="actionZ_Buffer">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Z-Buffer?</string>
+   </property>
+  </action>
+  <action name="actionBack_Line">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Back Line?</string>
+   </property>
+  </action>
+  <action name="actionLight_Fixed">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Light Fixed?</string>
+   </property>
+  </action>
+  <action name="actionWireframe">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Wireframe</string>
+   </property>
+  </action>
+  <action name="actionFlat">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Flat</string>
+   </property>
+  </action>
+  <action name="actionGouraud">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Gouraud</string>
+   </property>
+  </action>
+  <action name="actionTexture">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Texture?</string>
+   </property>
+  </action>
+  <action name="menuTexture_Function">
+   <property name="text">
+    <string>Texture Function</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionImage_File">
+   <property name="text">
+    <string>Image File</string>
+   </property>
+  </action>
+  <action name="actionDecal">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Decal?</string>
+   </property>
+  </action>
+  <action name="actionModulate">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Modulate?</string>
+   </property>
+  </action>
+  <action name="actionEixos">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Eixos?</string>
+   </property>
+  </action>
+  <action name="actionAbout_2">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionAbout_3">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>GLWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">glwidget.h</header>
+   <container>1</container>
+   <slots>
+    <slot>OnCube()</slot>
+    <slot>OnSphere()</slot>
+    <slot>OnTeapot()</slot>
+    <slot>OnNew()</slot>
+    <slot>OnFileOpen3ds()</slot>
+    <slot>OnFileOpenObj()</slot>
+    <slot>OnFullScreen()</slot>
+    <slot>OnMobil()</slot>
+    <slot>OnZoom()</slot>
+    <slot>OnPolarZ()</slot>
+    <slot>OnPolarY()</slot>
+    <slot>OnPolarX()</slot>
+    <slot>OnPan()</slot>
+    <slot>OnInipan()</slot>
+    <slot>OnNavega()</slot>
+    <slot>OnIninav()</slot>
+    <slot>OnEixos()</slot>
+    <slot>OnOrtografica()</slot>
+    <slot>OnPerspectiva()</slot>
+    <slot>OnTruck()</slot>
+    <slot>OnTraslacio()</slot>
+    <slot>OnInitras()</slot>
+    <slot>OnRotacio()</slot>
+    <slot>OnInirot()</slot>
+    <slot>OnEscalatge()</slot>
+    <slot>OnIniescal()</slot>
+    <slot>OnMobilX()</slot>
+    <slot>OnMobilY()</slot>
+    <slot>OnMobilZ()</slot>
+    <slot>OnFilferros()</slot>
+    <slot>OnFlat()</slot>
+    <slot>OnGouraud()</slot>
+    <slot>OnFNew()</slot>
+    <slot>OnIFixe()</slot>
+    <slot>OnTest()</slot>
+    <slot>OnZBuffer()</slot>
+    <slot>OnBackLine()</slot>
+    <slot>OnTexture()</slot>
+    <slot>OnTexturima()</slot>
+    <slot>OnTdecal()</slot>
+    <slot>OnTmodulate()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionNew</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnFNew()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpen_3DS_File</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnFileOpen3ds()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpen_OBJ_File</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnFileOpenObj()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMobil</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnMobil()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionZoom</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnZoom()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPolars_Eix_Z</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnPolarZ()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPolars_Eix_Y</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnPolarY()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPolars_Eix_X</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnPolarX()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPan</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnPan()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOrigen_Pan</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnAbout()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNavega</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnNavega()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOrigen_Navega</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnIninav()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPerspective</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnPerspectiva()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCube</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnCube()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSphere</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnSphere()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTeapot</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnTeapot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTruck</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnTruck()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTraslation</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnTraslacio()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOrigen_Tras</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnInitras()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionScale</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnEscalatge()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOrigen_Scale</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnIniescal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMobil_Eix_X</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnMobilX()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMobil_Eix_Y</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnMobilY()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMobil_Eix_Z</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnMobilZ()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBack_Face_Culling</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnTest()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionZ_Buffer</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnZBuffer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBack_Line</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnBackLine()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLight_Fixed</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnIFixe()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionWireframe</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnFilferros()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFlat</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnFlat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionGouraud</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnGouraud()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTexture</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnTexture()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionImage_File</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnTexturima()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDecal</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnTdecal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionModulate</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnTmodulate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEixos</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnEixos()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnExit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBack_Line</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnBackLine()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRotation</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnRotacio()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOrigen_Rot</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnInirot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFull_Screen</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>showFullScreen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>OnExit()</slot>
+  <slot>OnPerspectiva()</slot>
+  <slot>OnCube()</slot>
+  <slot>OnSphere()</slot>
+  <slot>OnTeapot()</slot>
+  <slot>OnOrtografica()</slot>
+  <slot>OnTruck()</slot>
+  <slot>OnNavega()</slot>
+  <slot>OnIninav()</slot>
+  <slot>OnInipan()</slot>
+  <slot>OnTraslacio()</slot>
+  <slot>OnInitras()</slot>
+  <slot>OnEixos()</slot>
+  <slot>OnTmodulate()</slot>
+  <slot>OnTdecal()</slot>
+  <slot>OnTexturima()</slot>
+  <slot>OnTexture()</slot>
+  <slot>OnGouraud()</slot>
+  <slot>OnFlat()</slot>
+  <slot>OnFilferros()</slot>
+  <slot>OnIFixe()</slot>
+  <slot>OnFNew()</slot>
+  <slot>OnFileOpen3ds()</slot>
+  <slot>OnFileOpenObj()</slot>
+  <slot>OnMobil()</slot>
+  <slot>OnZoom()</slot>
+  <slot>OnPolarZ()</slot>
+  <slot>OnPolarY()</slot>
+  <slot>OnPolarX()</slot>
+  <slot>OnPan()</slot>
+  <slot>OnAbout()</slot>
+  <slot>OnRotacio()</slot>
+  <slot>OnEscalatge()</slot>
+  <slot>OnIniescal()</slot>
+  <slot>OnMobilX()</slot>
+  <slot>OnMobilY()</slot>
+  <slot>OnMobilZ()</slot>
+  <slot>OnTest()</slot>
+  <slot>OnZBuffer()</slot>
+  <slot>OnBackLine()</slot>
+  <slot>OnInirot()</slot>
+ </slots>
+</ui>
