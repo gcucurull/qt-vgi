@@ -32,7 +32,6 @@
 #define _MAX_PATH 512
 #endif
 */
-
 // Proposta:
 #define _MAX_PATH 512
 
