@@ -6,3 +6,8 @@ Al compilar el projecte desde Qt Creator es necesita afegir uns paràmetres per 
 - Obrir CGEnv.pro amb un editor de text
 - Afegir la línea "QMAKE_LFLAGS = -lGLEW -lGLU -lGL -lglut" al fitxer. Jo l'he afegit abans de "SOURCES"
 - Guardar (no cal dir-ho, però una llista amb només 2 punts queda molt cutre)
+
+Dependencies Linux
+------------------
+libglew1.6-dev
+freeglut3-dev

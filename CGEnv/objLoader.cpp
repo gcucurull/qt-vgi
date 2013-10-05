@@ -34,7 +34,7 @@
 // Maximum number of vertices a that a single face can have
 #define MAX_VERTICES 256
 
-#ifdef __APPLE__
+#if defined(__APPLE__) || defined(__linux__)
 #define FALSE 0
 #define TRUE 1
 #endif
