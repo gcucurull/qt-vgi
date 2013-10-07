@@ -508,7 +508,7 @@
   <customwidget>
    <class>GLWidget</class>
    <extends>QWidget</extends>
-   <header location="global">glwidget.h</header>
+   <header location="global">GLWidget.h</header>
    <container>1</container>
    <slots>
     <slot>OnCube()</slot>

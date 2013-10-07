@@ -10,7 +10,8 @@ win32: LIBS += "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\glew32.l
 
 macx: LIBS += -framework GLUT
 
-linux: LIBS += -lGLEW -lGLU -lGL -lglut
+# només Linux
+unix:!macx: LIBS += -lGLEW -lGLU -lGL -lglut
 
 TARGET = CGEnv
 TEMPLATE = app

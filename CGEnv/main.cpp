@@ -6,11 +6,19 @@
 #include <QApplication>
 #include "cgenvwindow.h"
 
+#ifdef __linux__
+#include <GL/glut.h>
+#endif
+
 int main(int argc, char *argv[])
 {
+    #ifdef __linux__
+    glutInit(&argc,argv);
+    #endif
+
     QApplication a(argc, argv);
     CGEnvWindow w;
     w.show();
-    
+
     return a.exec();
 }
