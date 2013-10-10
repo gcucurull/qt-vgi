@@ -40,6 +40,7 @@ public slots:
     void OnEixos();
 //	4. PROJECCIÃ
     void OnPerspectiva();
+    void OnOrtografica();
 //	5. OBJECTE
     void OnCube();
     void OnSphere();

@@ -874,6 +874,32 @@ void CGEnvWindow::OnPerspectiva()
     Barra_Estat();
 }
 
+// PROJECCIO: Perspectiva
+void CGEnvWindow::OnOrtografica()
+{
+// TODO: Add your command handler code here
+//	projeccio=PERSPECT;
+
+// Definici pestanyes "Checked" de les opcions de la persiana View
+    mobil=true;		ui->actionMobil->setChecked(true);
+    zzoom=true;		ui->actionZoom->setChecked(true);
+
+// Passar el valor dels flags mobil i zzoom a contextGL
+    ui->contextGL->SetMobil(mobil);
+    ui->contextGL->SetZoom(zzoom);
+
+// Definici pestanyes "Checked" de les opcions de la persiana Projection
+    ui->actionOrthographic->setChecked(true);
+    ui->actionPerspective->setChecked(false);
+
+// Crida a la funcio 'On*' dins contextGL per a gestionar l'opcio
+    ui->contextGL->OnOrtografica();
+
+// Refrescar Status Bar
+    Barra_Estat();
+}
+
+
 
 /* ------------------------------------------------------------------------- */
 /*					5. OBJECTE					                             */

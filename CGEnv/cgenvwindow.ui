@@ -26,7 +26,7 @@
      <x>0</x>
      <y>0</y>
      <width>774</width>
-     <height>22</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -74,6 +74,7 @@
      <string>Projection</string>
     </property>
     <addaction name="actionPerspective"/>
+    <addaction name="actionOrthographic"/>
    </widget>
    <widget class="QMenu" name="menuObject">
     <property name="title">
@@ -458,11 +459,6 @@
     <string>Texture Function</string>
    </property>
   </action>
-  <action name="actionAbout">
-   <property name="text">
-    <string>About</string>
-   </property>
-  </action>
   <action name="actionImage_File">
    <property name="text">
     <string>Image File</string>
@@ -492,23 +488,13 @@
     <string>Eixos?</string>
    </property>
   </action>
-  <action name="actionAbout_2">
-   <property name="text">
-    <string>About</string>
-   </property>
-  </action>
-  <action name="actionAbout_3">
-   <property name="text">
-    <string>About</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
    <class>GLWidget</class>
    <extends>QWidget</extends>
-   <header location="global">glwidget.h</header>
+   <header location="global">GLWidget.h</header>
    <container>1</container>
    <slots>
     <slot>OnCube()</slot>
@@ -705,7 +691,7 @@
    <sender>actionOrigen_Pan</sender>
    <signal>triggered()</signal>
    <receiver>CGEnvWindow</receiver>
-   <slot>OnAbout()</slot>
+   <slot>OnInipan()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -1213,6 +1199,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionOrthographic</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnOrtografica()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>OnExit()</slot>
@@ -1245,7 +1247,6 @@
   <slot>OnPolarY()</slot>
   <slot>OnPolarX()</slot>
   <slot>OnPan()</slot>
-  <slot>OnAbout()</slot>
   <slot>OnRotacio()</slot>
   <slot>OnEscalatge()</slot>
   <slot>OnIniescal()</slot>

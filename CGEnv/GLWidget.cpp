@@ -213,9 +213,9 @@ void GLWidget::paintGL() {
             FonsB();
         else
             FonsN();
-/*
+
 // PLANTA (Superior Dret)
-        Projeccio_Orto();
+        Projeccio_Orto(0,h/2,w/2,h);
         Ortografica(0,OPV.R,c_fons,col_obj,objecte,oculta,
             test_vis,back_line,ilumina,llumGL,textura,textura_map,ifixe,eixos);
         // Dibuixar Model (escena)
@@ -226,7 +226,7 @@ void GLWidget::paintGL() {
             escena.dibuixa();					// Dibuix geometria de l'escena.
         glPopMatrix();
 // ALÇAT (Inferior Esquerra)
-        Projeccio_Orto();
+        Projeccio_Orto(w/2,h/2,w,h);
         Ortografica(1,OPV.R,c_fons,col_obj,objecte,oculta,
             test_vis,back_line,ilumina,llumGL,textura,textura_map,ifixe,eixos);
         // Dibuixar Model (escena)
@@ -237,7 +237,7 @@ void GLWidget::paintGL() {
             escena.dibuixa();					// Dibuix geometria de l'escena.
         glPopMatrix();
 // PERFIL (Superior Esquerra)
-        Projeccio_Orto();
+        Projeccio_Orto(0,0,w/2,h/2);
         Ortografica(2,OPV.R,c_fons,col_obj,objecte,oculta,
             test_vis,back_line,ilumina,llumGL,textura,textura_map,ifixe,eixos);
         // Dibuixar Model (escena)
@@ -248,8 +248,8 @@ void GLWidget::paintGL() {
             escena.dibuixa();					// Dibuix geometria de l'escena.
         glPopMatrix();
 // ISOMÈTRICA (Inferior Dret)
-        Projeccio_Orto();
-        Ortografica(3,OPVI,c_fons,col_obj,objecte,oculta,
+        Projeccio_Orto(w/2,0,w,h/2);
+        Ortografica(3,OPVI.R,c_fons,col_obj,objecte,oculta,
             test_vis,back_line,ilumina,llumGL,textura,textura_map,ifixe,eixos);
         // Dibuixar Model (escena)
         glPushMatrix();
@@ -258,7 +258,7 @@ void GLWidget::paintGL() {
             escena.SetTextu(textura);
             escena.dibuixa();					// Dibuix geometria de l'escena.
         glPopMatrix();
-*/
+
 // Intercanvia l'escena al front de la pantalla
         this->swapBuffers();
         break;
@@ -1621,6 +1621,16 @@ void GLWidget::wheelEvent(QWheelEvent * event )
         updateGL();
     }
 
+    // PROJECCIÓ: Perspectiva
+    void GLWidget::OnOrtografica()
+    {
+    // TODO: Add your command handler code here
+        projeccio=ORTO;
+        mobil=true;			zzoom=true;
+
+    // Crida a PaintGL() per redibuixar l'escena
+        updateGL();
+    }
 
     /* ------------------------------------------------------------------------- */
     /*					5. OBJECTE					                             */

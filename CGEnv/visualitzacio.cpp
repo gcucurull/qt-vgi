@@ -186,10 +186,32 @@ void Iluminacio(char ilumin,bool ifix,LLUM lumin,bool textur,bool textur_map,cha
 
 // PROJECCIO ORTOGRAFICA
 // Projeccio_Orto: Definició Viewport i glOrtho
-void Projeccio_Orto()
-{   
+void Projeccio_Orto(int minx,int miny,int maxx,int maxy)
+{
     //	----GC2: ESPECIFICACIO DELS PARÀMETRES DE PROJECCIÓ ORTOGRÀFICA
     //			QUE ES CARREGUEN A LA MATRIU DE PROJECCIÓ GL_PROJECTION
+
+    // Desactivació del retall de pantalla
+
+    glScissor(minx,miny,maxx,maxy);
+    glViewport(minx,miny,maxx,maxy);
+
+
+    // Activació i inicialització matriu PROJECTION
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+
+    // PROJECCIO PERSPECTIVA.Definim volum de visualització adaptant-lo
+    //	 a les mides actuals de la finestra windows
+
+    // Amb gluPerspective
+        //gluPerspective(60.0,1.0,p_near,p_far);
+
+        glOrtho(-10,10,-10,10,p_near,p_far);
+
+    // Activació matriu MODELVIEW (tancar matriu PROJECTION)
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
 }
 
 // Ortogràfica: Ilumina i dibuixa l'escena
@@ -208,6 +230,35 @@ void Ortografica(int prj, GLfloat R,CColor col_fons,CColor col_object,char objec
 // ESPECIFICACIO DEL PUNT DE VISTA
 // Cal definir el punt de vista (gluLookAt) en funció del
 //     tipus de projecció definit a la variable prj.
+    gluLookAt(5,0,0,0,0,0,0,0,1);
+//    switch(prj){
+//        case 0:{
+//        // Especificació del punt de vista
+//           gluLookAt(cam[0],cam[1],cam[2],0.,0.,0.,
+//                 up[0],up[1],up[2]);
+//            break;
+//        }
+//        case 1:{
+//            // Especificació del punt de vista
+//           gluLookAt(cam[0],cam[1],cam[2],0.,0.,0.,
+//                 up[0],up[1],up[2]);
+//            break;
+//        }
+//        case 2:{
+//            // Especificació del punt de vista
+//           gluLookAt(cam[0],cam[1],cam[2],0.,0.,0.,
+//                 up[0],up[1],up[2]);
+//            break;
+//        }
+//        case 3:{
+//            // Especificació del punt de vista
+//           gluLookAt(cam[0],cam[1],cam[2],0.,0.,0.,
+//                 up[0],up[1],up[2]);
+//            break;
+//        }
+//    }
+
+
 
 // Neteja dels buffers de color i profunditat
 	Fons(col_fons);

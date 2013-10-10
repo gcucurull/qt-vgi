@@ -71,6 +71,7 @@ public:
     void OnEixos();
 //	4. PROJECCIÓ
     void OnPerspectiva();
+    void OnOrtografica();
 //	5. OBJECTE
     void OnCube();
     void OnSphere();

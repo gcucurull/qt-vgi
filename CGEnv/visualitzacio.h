@@ -15,7 +15,7 @@
 void Iluminacio(char ilumin,bool ifix,LLUM lumin,bool textur,char obj,bool bc_lin);
 
 // G2: Projecció Ortografica;
-void Projeccio_Orto();
+void Projeccio_Orto(int,int,int,int);
 void Ortografica(int prj,GLfloat R,CColor col_fons,CColor col_object,char objecte,bool oculta,bool testv,
 				 bool bck_ln,char iluminacio,LLUM lumi,bool textur,bool textur_map,bool ifix,bool eix);
 
