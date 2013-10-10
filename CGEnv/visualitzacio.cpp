@@ -236,25 +236,25 @@ void Ortografica(int prj, GLfloat R,CColor col_fons,CColor col_object,char objec
         case 0:{
         // Superior Dret
         // Especificació del punt de vista
-           gluLookAt(5,0,0,0,0,0,0,1,0);
+           gluLookAt(0,10,0,0,0,0,0,0,-1);
             break;
         }
         case 1:{
         // Inferior Esq
             // Especificació del punt de vista
-           gluLookAt(5,0,0,0,0,0,0,1,0);
+           gluLookAt(0,0,10,0,0,0,0,1,0);
             break;
         }
         case 2:{
         // Superior Esquerra
             // Especificació del punt de vista
-           gluLookAt(5,0,0,0,0,0,0,1,0);
+           gluLookAt(10,0,0,0,0,0,0,1,0);
             break;
         }
         case 3:{
         // Inferior dreta
             // Especificació del punt de vista
-            gluLookAt(5,5,5,0,0,0,0,1,0);
+            gluLookAt(10,10,10,0,0,0,0,1,0);
             break;
         }
     }
