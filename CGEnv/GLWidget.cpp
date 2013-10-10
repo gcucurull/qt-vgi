@@ -215,7 +215,7 @@ void GLWidget::paintGL() {
             FonsN();
 
 // PLANTA (Superior Dret)
-        Projeccio_Orto(0,h/2,w/2,h);
+        Projeccio_Orto(w/2,h/2,w/2,h/2);
         Ortografica(0,OPV.R,c_fons,col_obj,objecte,oculta,
             test_vis,back_line,ilumina,llumGL,textura,textura_map,ifixe,eixos);
         // Dibuixar Model (escena)
@@ -226,7 +226,7 @@ void GLWidget::paintGL() {
             escena.dibuixa();					// Dibuix geometria de l'escena.
         glPopMatrix();
 // ALÇAT (Inferior Esquerra)
-        Projeccio_Orto(w/2,h/2,w,h);
+        Projeccio_Orto(0,0,w/2,h/2);
         Ortografica(1,OPV.R,c_fons,col_obj,objecte,oculta,
             test_vis,back_line,ilumina,llumGL,textura,textura_map,ifixe,eixos);
         // Dibuixar Model (escena)
@@ -237,7 +237,7 @@ void GLWidget::paintGL() {
             escena.dibuixa();					// Dibuix geometria de l'escena.
         glPopMatrix();
 // PERFIL (Superior Esquerra)
-        Projeccio_Orto(0,0,w/2,h/2);
+        Projeccio_Orto(0,h/2,w/2,h/2);
         Ortografica(2,OPV.R,c_fons,col_obj,objecte,oculta,
             test_vis,back_line,ilumina,llumGL,textura,textura_map,ifixe,eixos);
         // Dibuixar Model (escena)
@@ -248,7 +248,7 @@ void GLWidget::paintGL() {
             escena.dibuixa();					// Dibuix geometria de l'escena.
         glPopMatrix();
 // ISOMÈTRICA (Inferior Dret)
-        Projeccio_Orto(w/2,0,w,h/2);
+        Projeccio_Orto(w/2,0,w/2,h/2);
         Ortografica(3,OPVI.R,c_fons,col_obj,objecte,oculta,
             test_vis,back_line,ilumina,llumGL,textura,textura_map,ifixe,eixos);
         // Dibuixar Model (escena)

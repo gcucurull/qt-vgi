@@ -193,8 +193,8 @@ void Projeccio_Orto(int minx,int miny,int maxx,int maxy)
 
     // Desactivació del retall de pantalla
 
-    glScissor(minx,miny,maxx,maxy);
     glViewport(minx,miny,maxx,maxy);
+    glScissor(minx,miny,maxx,maxy);
 
 
     // Activació i inicialització matriu PROJECTION
@@ -212,6 +212,7 @@ void Projeccio_Orto(int minx,int miny,int maxx,int maxy)
     // Activació matriu MODELVIEW (tancar matriu PROJECTION)
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
+
 }
 
 // Ortogràfica: Ilumina i dibuixa l'escena
@@ -230,33 +231,33 @@ void Ortografica(int prj, GLfloat R,CColor col_fons,CColor col_object,char objec
 // ESPECIFICACIO DEL PUNT DE VISTA
 // Cal definir el punt de vista (gluLookAt) en funció del
 //     tipus de projecció definit a la variable prj.
-    gluLookAt(5,0,0,0,0,0,0,0,1);
-//    switch(prj){
-//        case 0:{
-//        // Especificació del punt de vista
-//           gluLookAt(cam[0],cam[1],cam[2],0.,0.,0.,
-//                 up[0],up[1],up[2]);
-//            break;
-//        }
-//        case 1:{
-//            // Especificació del punt de vista
-//           gluLookAt(cam[0],cam[1],cam[2],0.,0.,0.,
-//                 up[0],up[1],up[2]);
-//            break;
-//        }
-//        case 2:{
-//            // Especificació del punt de vista
-//           gluLookAt(cam[0],cam[1],cam[2],0.,0.,0.,
-//                 up[0],up[1],up[2]);
-//            break;
-//        }
-//        case 3:{
-//            // Especificació del punt de vista
-//           gluLookAt(cam[0],cam[1],cam[2],0.,0.,0.,
-//                 up[0],up[1],up[2]);
-//            break;
-//        }
-//    }
+
+    switch(prj){
+        case 0:{
+        // Superior Dret
+        // Especificació del punt de vista
+           gluLookAt(5,0,0,0,0,0,0,1,0);
+            break;
+        }
+        case 1:{
+        // Inferior Esq
+            // Especificació del punt de vista
+           gluLookAt(5,0,0,0,0,0,0,1,0);
+            break;
+        }
+        case 2:{
+        // Superior Esquerra
+            // Especificació del punt de vista
+           gluLookAt(5,0,0,0,0,0,0,1,0);
+            break;
+        }
+        case 3:{
+        // Inferior dreta
+            // Especificació del punt de vista
+            gluLookAt(5,5,5,0,0,0,0,1,0);
+            break;
+        }
+    }
 
 
 
