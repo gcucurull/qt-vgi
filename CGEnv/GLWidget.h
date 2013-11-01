@@ -77,6 +77,7 @@ public:
     void OnSphere();
     void OnTeapot();
     void OnTruck();
+    void OnCamio();
 //	6. TRANSFORMA
     void OnTraslacio();
     void OnInitras();

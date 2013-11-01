@@ -58,6 +58,67 @@ void Model::dibuixa(){
         truck(textu);
             break;
 
+    // Camio fet per nosaltres
+    case CAMIO:
+            // PART POSTERIOR
+            glColor3f(0.5,0.5,0.5);
+            glPushMatrix();
+                // El pugem 0.3 que es la meitat de la roda
+                glTranslatef(0,0,1.3);
+                glScalef(2.0f,5.0f,2.0f);
+                glutSolidCube(1.0);
+            glPopMatrix();
+
+            // CABINA
+            glColor3f(0,0.7,0.7);
+            glPushMatrix();
+                // El pugem 0.3 que es la meitat de la roda
+                glTranslatef(0,2.75,1.5/2+0.3);
+                glScalef(1.5f,0.5f,1.5f);
+                glutSolidCube(1.0);
+            glPopMatrix();
+
+            // MOTOR
+            glColor3f(0,0.7,0.7);
+            glPushMatrix();
+                // El pugem 0.3 que es la meitat de la roda
+                glTranslatef(0,3.5,0.8);
+                glutSolidCube(1.0);
+            glPopMatrix();
+
+            // Roda davantera esquerra
+            glColor3f(0.7,0.7,0.7);
+            glPushMatrix();
+                glTranslatef(-0.7,2,0.3);
+                glRotated(90,0,-1,0);
+                glutSolidTorus(0.1, 0.2, 20, 20);
+            glPopMatrix();
+
+            // Roda davantera dreta
+            glColor3f(0.7,0.7,0.7);
+            glPushMatrix();
+                glTranslatef(0.7,2,0.3);
+                glRotated(90,0,-1,0);
+                glutSolidTorus(0.1, 0.2, 20, 20);
+            glPopMatrix();
+
+            // Roda trasera esquerra
+            glColor3f(0.7,0.7,0.7);
+            glPushMatrix();
+                glTranslatef(-0.7,-2,0.3);
+                glRotated(90,0,-1,0);
+                glutSolidTorus(0.1, 0.2, 20, 20);
+            glPopMatrix();
+
+            // Roda trasera dreta
+            glColor3f(0.7,0.7,0.7);
+            glPushMatrix();
+                glTranslatef(0.7,-2,0.3);
+                glRotated(90,0,-1,0);
+                glutSolidTorus(0.1, 0.2, 20, 20);
+            glPopMatrix();
+            break;
+
     case OBJ3DS:
 //		glColor3f(col_object.r,col_object.g,col_object.b);
 // Dibuix de l'objecte 3DS amb textures (OBJECTE3DST) o sense textures (OBJECTE3DS)

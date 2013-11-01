@@ -55,6 +55,7 @@
 #define MALLA 'M'
 #define TETERA 't'
 #define TRUCK 'T'
+#define CAMIO 'K'
 #define OBJ3DS '3'		// Objecte format 3DS
 #define OBJOBJ '4'		// Objecte format OBJ
 

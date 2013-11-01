@@ -552,6 +552,7 @@ void CGEnvWindow::OnFileOpen3ds()
     ui->actionSphere->setChecked(false);
     ui->actionTeapot->setChecked(false);
     ui->actionTruck->setChecked(false);
+    ui->actionCamio->setChecked(false);
 
 // Crida a la funcio 'On*' dins contextGL per a gestionar l'opcio
     ui->contextGL->OnFileOpen3ds();
@@ -570,6 +571,7 @@ void CGEnvWindow::OnFileOpenObj()
    ui->actionSphere->setChecked(false);
    ui->actionTeapot->setChecked(false);
    ui->actionTruck->setChecked(false);
+   ui->actionCamio->setChecked(false);
 
 // Crida a la funcio 'On*' dins contextGL per a gestionar l'opcio
     ui->contextGL->OnFileOpenObj();
@@ -913,6 +915,7 @@ void CGEnvWindow::OnCube()
     ui->actionSphere->setChecked(false);
     ui->actionTeapot->setChecked(false);
     ui->actionTruck->setChecked(false);
+    ui->actionCamio->setChecked(false);
 
 // Crida a la funcio 'On*' dins contextGL per a gestionar l'opcio
     ui->contextGL->OnCube();
@@ -931,6 +934,7 @@ void CGEnvWindow::OnSphere()
     ui->actionSphere->setChecked(true);
     ui->actionTeapot->setChecked(false);
     ui->actionTruck->setChecked(false);
+    ui->actionCamio->setChecked(false);
 
 // Crida a la funcio 'On*' dins contextGL per a gestionar l'opcio
     ui->contextGL->OnSphere();
@@ -949,6 +953,7 @@ void CGEnvWindow::OnTeapot()
     ui->actionSphere->setChecked(false);
     ui->actionTeapot->setChecked(true);
     ui->actionTruck->setChecked(false);
+    ui->actionCamio->setChecked(false);
 
 // Crida a la funcio 'On*' dins contextGL per a gestionar l'opcio
     ui->contextGL->OnTeapot();
@@ -967,9 +972,28 @@ void CGEnvWindow::OnTruck()
     ui->actionSphere->setChecked(false);
     ui->actionTeapot->setChecked(false);
     ui->actionTruck->setChecked(true);
+    ui->actionCamio->setChecked(false);
 
 // Crida a la funcio 'On*' dins contextGL per a gestionar l'opcio
     ui->contextGL->OnTruck();
+
+// Refrescar Status Bar
+    Barra_Estat();
+}
+
+// OBJECTE Camio
+void CGEnvWindow::OnCamio()
+{
+
+// Definici pestanyes "Checked" de les opcions de la persiana Objecte
+    ui->actionCube->setChecked(false);
+    ui->actionSphere->setChecked(false);
+    ui->actionTeapot->setChecked(false);
+    ui->actionTruck->setChecked(false);
+    ui->actionCamio->setChecked(true);
+
+// Crida a la funcio 'On*' dins contextGL per a gestionar l'opcio
+    ui->contextGL->OnCamio();
 
 // Refrescar Status Bar
     Barra_Estat();

@@ -26,7 +26,7 @@
      <x>0</x>
      <y>0</y>
      <width>774</width>
-     <height>20</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -84,6 +84,7 @@
     <addaction name="actionSphere"/>
     <addaction name="actionTeapot"/>
     <addaction name="actionTruck"/>
+    <addaction name="actionCamio"/>
    </widget>
    <widget class="QMenu" name="menuTransform">
     <property name="title">
@@ -486,6 +487,14 @@
    </property>
    <property name="text">
     <string>Eixos?</string>
+   </property>
+  </action>
+  <action name="actionCamio">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Camio</string>
    </property>
   </action>
  </widget>
@@ -1215,6 +1224,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionCamio</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnCamio()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>OnExit()</slot>
@@ -1257,5 +1282,6 @@
   <slot>OnZBuffer()</slot>
   <slot>OnBackLine()</slot>
   <slot>OnInirot()</slot>
+  <slot>OnCamio()</slot>
  </slots>
 </ui>

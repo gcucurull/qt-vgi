@@ -1674,6 +1674,7 @@ void GLWidget::wheelEvent(QWheelEvent * event )
 
     //  Modificar R per centrar Vista amb mida de l'objecte
         mida=sqrtf(3)*7.25;
+
         OPV.R=0.5*mida/sin(30*pi/180)+p_near;
 
     // Crida a PaintGL() per redibuixar l'escena
@@ -1692,6 +1693,20 @@ void GLWidget::wheelEvent(QWheelEvent * event )
 
     //  Modificar R per centrar Vista amb mida de l'objecte
         mida=sqrtf(3)*90;
+        OPV.R=0.5*mida/sin(30*pi/180)+p_near;
+
+    // Crida a PaintGL() per redibuixar l'escena
+        updateGL();
+    }
+
+    // OBJECTE Truck
+    void GLWidget::OnCamio()
+    {
+    // TODO: Add your command handler code here
+        objecte=CAMIO;
+
+    //  Modificar R per centrar Vista amb mida de l'objecte
+        mida=sqrtf(3)*9;
         OPV.R=0.5*mida/sin(30*pi/180)+p_near;
 
     // Crida a PaintGL() per redibuixar l'escena

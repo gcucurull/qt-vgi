@@ -1,6 +1,6 @@
 //******** PRACTICA GRAFICS PER COMPUTADOR 2
-//******** Entorn b‡sic amb interfÌcie Qt i OpenGL (PFC)
-//******** Carme Juli‡, DÈbora Gil, Ferran Poveda, Enric MartÌ (Juny 2012)
+//******** Entorn b√†sic amb interf√≠cie Qt i OpenGL (PFC)
+//******** Carme Juli√†, D√©bora Gil, Ferran Poveda, Enric Mart√≠ (Juny 2012)
 // visualitzacio.h : Interface de visualitzacio.cpp
 //
 
@@ -11,15 +11,15 @@
 /*                                Funcions                                   */
 /* ------------------------------------------------------------------------- */
 
-// G2: Il.luminaciÛ
+// G2: Il.luminaci√≥
 void Iluminacio(char ilumin,bool ifix,LLUM lumin,bool textur,char obj,bool bc_lin);
 
-// G2: ProjecciÛ Ortografica;
+// G2: Projecci√≥ Ortografica;
 void Projeccio_Orto(int,int,int,int);
 void Ortografica(int prj,GLfloat R,CColor col_fons,CColor col_object,char objecte,bool oculta,bool testv,
 				 bool bck_ln,char iluminacio,LLUM lumi,bool textur,bool textur_map,bool ifix,bool eix);
 
-// G2: ProjecciÛ Perspectiva
+// G2: Projecci√≥ Perspectiva
 void Projeccio_Perspectiva(int,int,GLsizei,GLsizei,float);
 void Perspectiva(CEsfe3D opv,char VPol,bool pant,CPunt3D tr,CPunt3D trF,
                  CColor col_fons,CColor col_object,char objecte,bool oculta,bool testv,
