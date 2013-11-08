@@ -1630,7 +1630,7 @@ void GLWidget::wheelEvent(QWheelEvent * event )
     {
     // TODO: Add your command handler code here
         projeccio=ORTO;
-        mobil=true;			zzoom=true;
+        mobil=false;			zzoom=false;
 
     // Crida a PaintGL() per redibuixar l'escena
         updateGL();
@@ -1647,10 +1647,16 @@ void GLWidget::wheelEvent(QWheelEvent * event )
         objecte=CUB;
 
     //  Modificar R per centrar Vista amb mida de l'objecte
-        mida=5*sqrtf(3);
+
+        // per encabir dins volum visualitzacio ortografia
         float D = sqrt (5 * 5 + 5 * 5 + 5 * 5); // D = sqrt(rangx*rangx + rangy*rangy + rangz*rangz)
         VVOrto = sqrt(3)/D; // S = 2r/D
-        OPV.R=0.5*mida/sin(30*pi/180)+p_near;
+
+        // per encabir dins volum visualitzacio perspectiva
+        // ANTIC mida=5*sqrtf(3);
+        // ANTIC OPV.R=0.5*mida/sin(30*pi/180)+p_near;
+        float r = D / 2;
+        OPV.R = r / sin((60*pi/180)/2) + p_near; // 60*pi/180 és per pasar alpha=60º a radians
 
     // Crida a PaintGL() per redibuixar l'escena
         updateGL();
@@ -1664,11 +1670,16 @@ void GLWidget::wheelEvent(QWheelEvent * event )
         objecte=ESFERA;
 
     //  Modificar R per centrar Vista amb mida de l'objecte
-        mida=10;
-        OPV.R=0.5*mida/sin(30*pi/180)+p_near;
+
+        // ANTIC
+//        mida=10;
+//        OPV.R=0.5*mida/sin(30*pi/180)+p_near;
 
         float D = sqrt (10 * 10 + 10 * 10 + 10 * 10); // D = sqrt(rangx*rangx + rangy*rangy + rangz*rangz)
         VVOrto = (sqrt(3)/D); // S = 2r/D
+
+        float r = D / 2;
+        OPV.R = r / sin((60*pi/180)/2) + p_near; // 60*pi/180 és per pasar alpha=60º a radians
 
     // Crida a PaintGL() per redibuixar l'escena
         updateGL();
@@ -1682,12 +1693,17 @@ void GLWidget::wheelEvent(QWheelEvent * event )
         objecte=TETERA;
 
     //  Modificar R per centrar Vista amb mida de l'objecte
-        mida=sqrtf(3)*7.25;
 
-        OPV.R=0.5*mida/sin(30*pi/180)+p_near;
+        // ANTIC
+//        mida=sqrtf(3)*7.25;
+
+//        OPV.R=0.5*mida/sin(30*pi/180)+p_near;
 
         float D = sqrt (10 * 10 + 10 * 10 + 10 * 10); // D = sqrt(rangx*rangx + rangy*rangy + rangz*rangz)
         VVOrto = (sqrt(3)/D); // S = 2r/D
+
+        float r = D / 2;
+        OPV.R = r / sin((60*pi/180)/2) + p_near; // 60*pi/180 és per pasar alpha=60º a radians
 
     // Crida a PaintGL() per redibuixar l'escena
         updateGL();
@@ -1703,12 +1719,15 @@ void GLWidget::wheelEvent(QWheelEvent * event )
     // Inicialitza vector imatges textura pel Truck.
         escena.Init_Textures();
 
-    //  Modificar R per centrar Vista amb mida de l'objecte
-        mida=sqrtf(3)*90;
-        OPV.R=0.5*mida/sin(30*pi/180)+p_near;
+//        mida=sqrtf(3)*90;
+//        OPV.R=0.5*mida/sin(30*pi/180)+p_near;
 
         float D = sqrt (30 * 30 + 210 * 210 + 70 * 70); // D = sqrt(rangx*rangx + rangy*rangy + rangz*rangz)
         VVOrto = (sqrt(3)/D); // S = 2r/D
+
+        //  Modificar R per centrar Vista amb mida de l'objecte
+        float r = D / 2;
+        OPV.R = r / sin((60*pi/180)/2) + p_near; // 60*pi/180 és per pasar alpha=60º a radians
 
     // Crida a PaintGL() per redibuixar l'escena
         updateGL();
@@ -1720,12 +1739,16 @@ void GLWidget::wheelEvent(QWheelEvent * event )
     // TODO: Add your command handler code here
         objecte=CAMIO;
 
-    //  Modificar R per centrar Vista amb mida de l'objecte
-        mida=sqrtf(3)*9;
-        OPV.R=0.5*mida/sin(30*pi/180)+p_near;
+
+//        mida=sqrtf(3)*9;
+//        OPV.R=0.5*mida/sin(30*pi/180)+p_near;
 
         float D = sqrt (2 * 2 + 6.5 * 6.5 + 2.1 * 2.1); // D = sqrt(rangx*rangx + rangy*rangy + rangz*rangz)
         VVOrto = (sqrt(3)/D); // S = 2r/D
+
+        //  Modificar R per centrar Vista amb mida de l'objecte
+        float r = D / 2;
+        OPV.R = r / sin((60*pi/180)/2) + p_near; // 60*pi/180 és per pasar alpha=60º a radians
 
     // Crida a PaintGL() per redibuixar l'escena
         updateGL();

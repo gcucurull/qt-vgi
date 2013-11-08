@@ -533,7 +533,7 @@ bool loadIMA(char* filename, int texID)
 	QImage b;
 	
 // Open the image file for reading
-#ifdef __APPLE__
+#ifdef __unix__
     file=fopen(filename,"r");					// Funció Visual Studio 6.0 i MAC
     if (file == NULL)	{
     printf("Could not open file '%s'.\n",filename) ;
@@ -552,13 +552,13 @@ bool loadIMA(char* filename, int texID)
 // Close the image file
 	fclose(file);
 
-	b.load(filename);
-	t=QGLWidget::convertToGLFormat(b);
+    b.load(filename);
+    t=QGLWidget::convertToGLFormat(b);
 //	glGenTextures(1,&texID);
-	glBindTexture(GL_TEXTURE_2D,texID);
-	gluBuild2DMipmaps(GL_TEXTURE_2D,3,t.width(),t.height(),GL_RGBA,GL_UNSIGNED_BYTE,t.bits());
-	glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+    glBindTexture(GL_TEXTURE_2D,texID);
+    gluBuild2DMipmaps(GL_TEXTURE_2D,3,t.width(),t.height(),GL_RGBA,GL_UNSIGNED_BYTE,t.bits());
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
 
 // If execution arrives here it means that all went well. Return true
 	return true;
