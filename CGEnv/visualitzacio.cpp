@@ -480,8 +480,8 @@ bool loadIMA(char* filename, int texID)
 	QImage b;
 	
 // Open the image file for reading
-#ifdef __APPLE__
-    file=fopen(filename,"r");					// Funció Visual Studio 6.0 i MAC
+#ifdef __unix__
+    file=fopen(filename,"r");					// Funció Visual Studio 6.0, MAC i linux
     if (file == NULL)	{
     printf("Could not open file '%s'.\n",filename) ;
     return false ;
