@@ -223,6 +223,7 @@ void GLWidget::paintGL() {
             instancia(transf,TG,TGF);			// Aplicar Transformacions Geomètriques segons persiana Transformacio
             escena.SetObjecte(objecte);
             escena.SetTextu(textura);
+            glScalef(VVOrto, VVOrto, VVOrto);
             escena.dibuixa();					// Dibuix geometria de l'escena.
         glPopMatrix();
 // ALÇAT (Inferior Esquerra)
@@ -234,6 +235,7 @@ void GLWidget::paintGL() {
             instancia(transf,TG,TGF);			// Aplicar Transformacions Geomètriques segons persiana Transformacio
             escena.SetObjecte(objecte);
             escena.SetTextu(textura);
+            glScalef(VVOrto, VVOrto, VVOrto);
             escena.dibuixa();					// Dibuix geometria de l'escena.
         glPopMatrix();
 // PERFIL (Superior Esquerra)
@@ -245,6 +247,7 @@ void GLWidget::paintGL() {
             instancia(transf,TG,TGF);			// Aplicar Transformacions Geomètriques segons persiana Transformacio
             escena.SetObjecte(objecte);
             escena.SetTextu(textura);
+            glScalef(VVOrto, VVOrto, VVOrto);
             escena.dibuixa();					// Dibuix geometria de l'escena.
         glPopMatrix();
 // ISOMÈTRICA (Inferior Dret)
@@ -256,6 +259,7 @@ void GLWidget::paintGL() {
             instancia(transf,TG,TGF);			// Aplicar Transformacions Geomètriques segons persiana Transformacio
             escena.SetObjecte(objecte);
             escena.SetTextu(textura);
+            glScalef(VVOrto, VVOrto, VVOrto);
             escena.dibuixa();					// Dibuix geometria de l'escena.
         glPopMatrix();
 
@@ -1644,6 +1648,8 @@ void GLWidget::wheelEvent(QWheelEvent * event )
 
     //  Modificar R per centrar Vista amb mida de l'objecte
         mida=5*sqrtf(3);
+        float D = sqrt (5 * 5 + 5 * 5 + 5 * 5); // D = sqrt(rangx*rangx + rangy*rangy + rangz*rangz)
+        VVOrto = 1+(sqrt(3)/D); // S = 2r/D
         OPV.R=0.5*mida/sin(30*pi/180)+p_near;
 
     // Crida a PaintGL() per redibuixar l'escena
@@ -1708,6 +1714,9 @@ void GLWidget::wheelEvent(QWheelEvent * event )
     //  Modificar R per centrar Vista amb mida de l'objecte
         mida=sqrtf(3)*9;
         OPV.R=0.5*mida/sin(30*pi/180)+p_near;
+
+        float D = sqrt (2 * 2 + 6.5 * 6.5 + 2.1 * 2.1); // D = sqrt(rangx*rangx + rangy*rangy + rangz*rangz)
+        VVOrto = 1+(sqrt(3)/D); // S = 2r/D
 
     // Crida a PaintGL() per redibuixar l'escena
         updateGL();

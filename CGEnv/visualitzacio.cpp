@@ -219,12 +219,13 @@ void Projeccio_Orto(int minx,int miny,int maxx,int maxy)
 
 // Ortogràfica: Ilumina i dibuixa l'escena
 void Ortografica(int prj, GLfloat R,CColor col_fons,CColor col_object,char objecte,bool oculta,bool testv,
-				 bool bck_ln,char iluminacio,LLUM lumi,bool textur,bool textur_map,bool ifix,bool eix)
+                 bool bck_ln,char iluminacio,LLUM lumi,bool textur,bool textur_map,bool ifix,bool eix)
 {
 //	int i,j;
 
 	GLfloat cam[3],up[3];
 	bool sw_iso=false;
+
 
 // Iluminacio movent-se amb la camara (abans gluLookAt)
     if (!ifix) Iluminacio(iluminacio,ifix,lumi,textur,textur_map,objecte,bck_ln);
