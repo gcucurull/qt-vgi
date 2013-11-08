@@ -2013,6 +2013,21 @@ void GLWidget::wheelEvent(QWheelEvent * event )
 
     }
 
+    void GLWidget::OnWood()
+    {
+        loadIMA("../CGEnv/textures/fusta.BMP",0);
+    }
+
+    void GLWidget::OnMarble()
+    {
+        loadIMA("../CGEnv/textures/MARBRE.BMP",0);
+    }
+
+    void GLWidget::OnMetal()
+    {
+        loadIMA("../CGEnv/textures/METALL.BMP",0);
+    }
+
 
     // TEXTURA -> Mapping Textura Calcat (textura sobreposada a la llum)
     void GLWidget::OnTdecal()

@@ -1382,12 +1382,62 @@ void CGEnvWindow::OnTexturima()
 {
 // TODO: Add your command handler code here
 
+
+    ui->actionWOOD->setChecked(false);
+    ui->actionMARBLE->setChecked(false);
+    ui->actionMETAL->setChecked(false);
+
 // Crida a la funcio 'On*' dins contextGL per a gestionar l'opcio
     ui->contextGL->OnTexturima();
 
 // Refrescar Status Bar
     Barra_Estat();
 }
+
+void CGEnvWindow::OnWood()
+{
+// TODO: Add your command handler code here
+    ui->actionWOOD->setChecked(true);
+    ui->actionMARBLE->setChecked(false);
+    ui->actionMETAL->setChecked(false);
+
+// Crida a la funcio 'On*' dins contextGL per a gestionar l'opcio
+    ui->contextGL->OnWood();
+
+// Refrescar Status Bar
+    Barra_Estat();
+}
+
+
+void CGEnvWindow::OnMarble()
+{
+// TODO: Add your command handler code here
+    ui->actionWOOD->setChecked(false);
+    ui->actionMARBLE->setChecked(true);
+    ui->actionMETAL->setChecked(false);
+
+// Crida a la funcio 'On*' dins contextGL per a gestionar l'opcio
+    ui->contextGL->OnMarble();
+
+// Refrescar Status Bar
+    Barra_Estat();
+}
+
+
+void CGEnvWindow::OnMetal()
+{
+// TODO: Add your command handler code here
+    ui->actionWOOD->setChecked(false);
+    ui->actionMARBLE->setChecked(false);
+    ui->actionMETAL->setChecked(true);
+
+// Crida a la funcio 'On*' dins contextGL per a gestionar l'opcio
+    ui->contextGL->OnMetal();
+
+// Refrescar Status Bar
+    Barra_Estat();
+}
+
 
 
 // TEXTURA -> Mapping Textura Calcat (textura sobreposada a la llum)

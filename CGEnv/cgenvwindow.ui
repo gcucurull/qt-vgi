@@ -26,7 +26,7 @@
      <x>0</x>
      <y>0</y>
      <width>774</width>
-     <height>25</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -120,6 +120,10 @@
      <property name="title">
       <string>Texture Function</string>
      </property>
+     <addaction name="actionWOOD"/>
+     <addaction name="actionMARBLE"/>
+     <addaction name="actionMETAL"/>
+     <addaction name="separator"/>
      <addaction name="actionImage_File"/>
     </widget>
     <widget class="QMenu" name="menuMapping">
@@ -139,11 +143,6 @@
     <addaction name="menuTexture_Function_2"/>
     <addaction name="menuMapping"/>
    </widget>
-   <widget class="QMenu" name="menuHola">
-    <property name="title">
-     <string>Hola</string>
-    </property>
-   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuBars"/>
    <addaction name="menuView"/>
@@ -152,7 +151,6 @@
    <addaction name="menuTransform"/>
    <addaction name="menuHidden"/>
    <addaction name="menuLighting"/>
-   <addaction name="menuHola"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -462,7 +460,7 @@
   </action>
   <action name="actionImage_File">
    <property name="text">
-    <string>Image File</string>
+    <string>Load image...</string>
    </property>
   </action>
   <action name="actionDecal">
@@ -495,6 +493,30 @@
    </property>
    <property name="text">
     <string>Camio</string>
+   </property>
+  </action>
+  <action name="actionWOOD">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>WOOD</string>
+   </property>
+  </action>
+  <action name="actionMARBLE">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>MARBLE</string>
+   </property>
+  </action>
+  <action name="actionMETAL">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>METAL</string>
    </property>
   </action>
  </widget>
@@ -547,6 +569,8 @@
     <slot>OnTexturima()</slot>
     <slot>OnTdecal()</slot>
     <slot>OnTmodulate()</slot>
+    <slot>OnCamio()</slot>
+    <slot>OnWOOD()</slot>
    </slots>
   </customwidget>
  </customwidgets>
@@ -1240,6 +1264,54 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionWOOD</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnWood()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMARBLE</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnMarble()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMETAL</sender>
+   <signal>triggered()</signal>
+   <receiver>CGEnvWindow</receiver>
+   <slot>OnMetal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>OnExit()</slot>
@@ -1283,5 +1355,8 @@
   <slot>OnBackLine()</slot>
   <slot>OnInirot()</slot>
   <slot>OnCamio()</slot>
+  <slot>OnWood()</slot>
+  <slot>OnMarble()</slot>
+  <slot>OnMetal()</slot>
  </slots>
 </ui>

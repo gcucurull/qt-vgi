@@ -99,6 +99,9 @@ public:
     void OnGouraud();
     void OnTexture();
     void OnTexturima();
+    void OnWood();
+    void OnMarble();
+    void OnMetal();
     void OnTdecal();
     void OnTmodulate();
 
