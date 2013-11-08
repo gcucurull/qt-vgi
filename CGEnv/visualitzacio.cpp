@@ -207,9 +207,9 @@ void Projeccio_Orto(int minx,int miny,int maxx,int maxy)
 
         // Aspect es w/h. Si es <1 vol dir que w ´es m´es petit que h
         if (aspect<1){
-            glOrtho(-10,10,-10/aspect,10/aspect,p_near,p_far);
+            glOrtho(-1,1,-1/aspect,1/aspect,p_near,p_far);
         }else{
-            glOrtho(-10*aspect,10*aspect,-10,10,p_near,p_far);
+            glOrtho(-1*aspect,1*aspect,-1,1,p_near,p_far);
         }
 
     // Activació matriu MODELVIEW (tancar matriu PROJECTION)

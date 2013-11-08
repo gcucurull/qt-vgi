@@ -1649,7 +1649,7 @@ void GLWidget::wheelEvent(QWheelEvent * event )
     //  Modificar R per centrar Vista amb mida de l'objecte
         mida=5*sqrtf(3);
         float D = sqrt (5 * 5 + 5 * 5 + 5 * 5); // D = sqrt(rangx*rangx + rangy*rangy + rangz*rangz)
-        VVOrto = 1+(sqrt(3)/D); // S = 2r/D
+        VVOrto = sqrt(3)/D; // S = 2r/D
         OPV.R=0.5*mida/sin(30*pi/180)+p_near;
 
     // Crida a PaintGL() per redibuixar l'escena
@@ -1667,6 +1667,9 @@ void GLWidget::wheelEvent(QWheelEvent * event )
         mida=10;
         OPV.R=0.5*mida/sin(30*pi/180)+p_near;
 
+        float D = sqrt (10 * 10 + 10 * 10 + 10 * 10); // D = sqrt(rangx*rangx + rangy*rangy + rangz*rangz)
+        VVOrto = (sqrt(3)/D); // S = 2r/D
+
     // Crida a PaintGL() per redibuixar l'escena
         updateGL();
     }
@@ -1682,6 +1685,9 @@ void GLWidget::wheelEvent(QWheelEvent * event )
         mida=sqrtf(3)*7.25;
 
         OPV.R=0.5*mida/sin(30*pi/180)+p_near;
+
+        float D = sqrt (10 * 10 + 10 * 10 + 10 * 10); // D = sqrt(rangx*rangx + rangy*rangy + rangz*rangz)
+        VVOrto = (sqrt(3)/D); // S = 2r/D
 
     // Crida a PaintGL() per redibuixar l'escena
         updateGL();
@@ -1701,11 +1707,14 @@ void GLWidget::wheelEvent(QWheelEvent * event )
         mida=sqrtf(3)*90;
         OPV.R=0.5*mida/sin(30*pi/180)+p_near;
 
+        float D = sqrt (30 * 30 + 210 * 210 + 70 * 70); // D = sqrt(rangx*rangx + rangy*rangy + rangz*rangz)
+        VVOrto = (sqrt(3)/D); // S = 2r/D
+
     // Crida a PaintGL() per redibuixar l'escena
         updateGL();
     }
 
-    // OBJECTE Truck
+    // OBJECTE Camio
     void GLWidget::OnCamio()
     {
     // TODO: Add your command handler code here
@@ -1716,7 +1725,7 @@ void GLWidget::wheelEvent(QWheelEvent * event )
         OPV.R=0.5*mida/sin(30*pi/180)+p_near;
 
         float D = sqrt (2 * 2 + 6.5 * 6.5 + 2.1 * 2.1); // D = sqrt(rangx*rangx + rangy*rangy + rangz*rangz)
-        VVOrto = 1+(sqrt(3)/D); // S = 2r/D
+        VVOrto = (sqrt(3)/D); // S = 2r/D
 
     // Crida a PaintGL() per redibuixar l'escena
         updateGL();
