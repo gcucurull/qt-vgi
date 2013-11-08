@@ -201,8 +201,6 @@ void Projeccio_Orto(int minx,int miny,int maxx,int maxy)
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
 
-        //glOrtho(-10,10,-10,10,p_near,p_far);
-
         float aspect = (float)maxx/maxy;
 
         // Aspect es w/h. Si es <1 vol dir que w ´es m´es petit que h
